@@ -30,7 +30,7 @@ class ConsumptionGraph(Scene):
         # Third scene
         self.play(Transform(title, Tex("Consumption after COVID").to_edge(UP)), FadeOut(limit_line), run_time=1)
         self.wait(0.5)
-        self.play(Transform(consumption_line, Line(axes.c2p(0,1), axes.c2p(4.5,10), color=GREEN)), run_time=2)
+        self.play(Transform(consumption_line, Line(axes.c2p(0,3), axes.c2p(10,10), color=GREEN)), run_time=2)
         self.wait(2)
                 
         # Cleanup
