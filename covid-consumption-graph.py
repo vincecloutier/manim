@@ -11,51 +11,35 @@ class ConsumptionGraph(Scene):
         # Labels
         labels = axes.get_axis_labels(x_label="Y-T", y_label="C")
 
-        # Consumption function parameters
-        a = 2
-        b = 0.8
-
-        def consumption_func(x):
-            return a + b * x
-
-        consumption_graph = axes.plot(consumption_func, color=WHITE)
+        def pre_consumption_func(x):
+            return x
+        
+        consumption_line = axes.plot(pre_consumption_func, color=WHITE)
 
         # Title
-        title = Tex("Pre-COVID Consumption").to_edge(UP)
+        title = Tex("Consumption before COVID").to_edge(UP)
 
         self.play(
             Create(axes),
             Create(labels),
-            Create(consumption_graph),
+            Create(consumption_line),
             Write(title)
         )
         self.wait()
 
-        # Updating title
-        new_title = Tex("During COVID Consumption").to_edge(UP)
-        
         # Limit line and label
-        limit_line = axes.plot(lambda x: 5, color=RED, stroke_width=2)
-        limit_label = Tex("Limit").next_to(limit_line, UP)
+        limit_line = axes.plot(lambda x: 5, color=RED)
 
         self.play(
-            Transform(title, new_title),
-            Create(limit_line),
-            Write(limit_label)
-        )
+            Transform(title, Tex("Consumption during COVID").to_edge(UP)),
+            Create(limit_line),)
         self.wait()
 
-        # New Consumption function parameters
-        a_new = 1.5
-        b_new = 0.7
-
-        def new_consumption_func(x):
-            return a_new + b_new * x
-
-        new_consumption_graph = axes.plot(new_consumption_func, color=YELLOW)
-
+        def post_consumption_func(x):
+            return 1 + 2 * x
+        
         self.play(
-            Transform(consumption_graph, new_consumption_graph),
-            Transform(title, Tex("Post-COVID Consumption").to_edge(UP))
+            Transform(consumption_line, axes.plot(post_consumption_func, color=YELLOW)),
+            Transform(title, Tex("Consumption after COVID").to_edge(UP))
         )
         self.wait()
