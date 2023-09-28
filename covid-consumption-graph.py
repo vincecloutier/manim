@@ -3,7 +3,7 @@ from manim import *
 class ConsumptionGraph(Scene):
     def construct(self):
         # create graph
-        axes = Axes(x_range=[0, 10], y_range=[0, 10], tips=False, axis_config={"color": BLUE})
+        axes = Axes(x_range=[0, 10], y_range=[0, 10], tips=False, axis_config={"color": BLUE}).shift(DOWN * 0.5)
         labels = axes.get_axis_labels(x_label="Y-T", y_label="C")
 
         def pre_consumption_func(x):
@@ -11,11 +11,6 @@ class ConsumptionGraph(Scene):
         
         def during_consumption_func(x):
             return min(x, 5) # Cap at C = 5
-
-        def post_consumption_func(x):
-            y = 1 + 2 * x
-            return y if y <= 10 else 10  # Adjusted to stop at Y = 10
-
                 
         consumption_line = axes.plot(pre_consumption_func, color=WHITE)
         limit_line = axes.plot(lambda x: 5, color=RED)
