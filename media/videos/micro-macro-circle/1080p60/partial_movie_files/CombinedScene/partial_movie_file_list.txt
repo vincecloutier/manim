@@ -1,0 +1,10 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/CombinedScene/1413466013_2318327866_223132457.mp4'
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/CombinedScene/1672018281_4128005871_1070748360.mp4'
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/CombinedScene/1672018281_102036443_4263766620.mp4'
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/CombinedScene/1672018281_340265685_294081134.mp4'
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/CombinedScene/1672018281_1185884124_3645022204.mp4'
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/CombinedScene/1672018281_3296246996_1011384715.mp4'
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/CombinedScene/1672018281_1950929052_2610983350.mp4'
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/CombinedScene/1672018281_2134366671_2788837519.mp4'
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/CombinedScene/1672018281_2292429055_1963924752.mp4'
