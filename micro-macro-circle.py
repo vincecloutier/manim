@@ -24,9 +24,9 @@ class CombinedScene(Scene):
         self.wait(5)
 
 
-    # bubble scene with threshold effects
-
-
+    # TODO bubble scene with threshold effects
+    # TODO split up the scenes
+    
     def construct_main_circle(self):
         intro_text = Tex("Redefining Micro / Macro Linkages").to_edge(UP)
         self.explanation_text = Tex("Circularity and Continuity").to_edge(DOWN)
@@ -60,11 +60,8 @@ class CombinedScene(Scene):
 
         return VGroup(left_background, left_label), VGroup(right_background, right_label)
 
-    def create_arrow_on_circle(self, angle, is_big=False, is_small = False):
-        length = 0.4 if is_big else 0.2
-        length = 0.1 if is_small else length
-        c = RED if is_big else WHITE
-        start_point = self.circle.point_at_angle(angle + length)
+    def create_arrow_on_circle(self, angle, l, c):
+        start_point = self.circle.point_at_angle(angle + l)
         end_point = self.circle.point_at_angle(angle)
         return Arrow(start=start_point, color = c, end=end_point, buff=0, max_tip_length_to_length_ratio=0.5)
 
