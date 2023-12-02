@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/ThresholdEffectsScene/1413466013_1256319023_223132457.mp4'
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/ThresholdEffectsScene/1672018281_2746645305_2353009438.mp4'
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/ThresholdEffectsScene/1672018281_4109959955_89576025.mp4'
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/ThresholdEffectsScene/1672018281_2080256396_1802516954.mp4'
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/ThresholdEffectsScene/1672018281_1572859928_3162995496.mp4'
+file 'file:/Users/vincecloutier/Repositories/manim/media/videos/micro-macro-circle/1080p60/partial_movie_files/ThresholdEffectsScene/1672018281_190800790_974428485.mp4'
