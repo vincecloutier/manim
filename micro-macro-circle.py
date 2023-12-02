@@ -4,7 +4,7 @@ class BaseScene(Scene):
     def construct_main_circle(self, bottom_text=None):
         intro_text = Tex("Redefining Micro / Macro Linkages").to_edge(UP)
         self.circle = Circle(radius=2.5, fill_opacity=0.0, stroke_opacity=0.0)
-        self.arrows = VGroup(*[self.create_arrow_on_circle(angle, 0.25, BLUE) for angle in np.arange(0, TAU, TAU / 12)])
+        self.arrows = VGroup(*[self.create_arrow_on_circle(angle, 0.25) for angle in np.arange(0, TAU, TAU / 12)])
         left_group, right_group = self.get_labels_with_background()
 
         self.play(
@@ -26,7 +26,7 @@ class BaseScene(Scene):
 
         return VGroup(left_background, left_label), VGroup(right_background, right_label)
 
-    def create_arrow_on_circle(self, angle, length, color):
+    def create_arrow_on_circle(self, angle, length, color = WHITE):
         start_point = self.circle.point_at_angle(angle + length)
         end_point = self.circle.point_at_angle(angle)
         return Arrow(start=start_point, end=end_point, color=color, buff=0, max_tip_length_to_length_ratio=0.5)
@@ -44,7 +44,8 @@ class BaseScene(Scene):
         angle = np.arctan2(arrow.get_end()[1], arrow.get_end()[0]) % TAU
         is_big = (angle < PI and top_bigger) or (angle > PI and not top_bigger)
         length = 0.25 if is_big else 0.1
-        return self.create_arrow_on_circle(angle, length, arrow.get_color())
+        color = RED if is_big else WHITE  # Big arrows are red, small arrows are white
+        return self.create_arrow_on_circle(angle, length, color)
 
 class MainCircleScene(BaseScene):
     def construct(self):
@@ -74,7 +75,7 @@ class MacroDominanceScene(BaseScene):
     def construct(self):
         b_text = Tex("Macro Dominance (COVID, Fukushima, Subprime Crisis)").to_edge(DOWN)
         self.construct_main_circle(b_text)
-        self.adjust_arrows_size(True, animate=True)
+        self.adjust_arrows_size(top_bigger=False, animate=True)
         self.play(
             Rotating(self.circle, radians=-TAU, about_point=ORIGIN, rate_func=smooth),
             Rotating(self.arrows, radians=-TAU, about_point=ORIGIN, rate_func=smooth),
